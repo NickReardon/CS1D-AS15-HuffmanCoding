@@ -1,0 +1,35 @@
+    Generate a Huffman Code for the letters in some alphabet, one 
+must start with a set of letters from the alphabet along with 
+their frequencies.  
+
+Method:
+    First, build a list which holds references to (binary) nodes 
+containing the letters in the alphabet, their frequencies of 
+occurrences, and left and right subtree references (initially null). 
+This could be viewed as a forest of single node trees. There will 
+be exactly one node in the list for each letter.
+
+    Second, systematically transform the list into a list with only one 
+element in it where the element points to the root of the 
+Huffman Code Tree for that alphabet (a single binary tree). This 
+transformation takes place as follows: repeatedly take two 
+elements in the list which have the lowest frequencies and make 
+them the left and right subtrees of the new element in the list 
+(lowest frequency goes in the left - for ease of grading). The 
+frequency of the new element is the sum of the frequencies of the two 
+that it embodies. This new element will replace the two 
+elements just used in the list.
+
+If you use a priority queue for your list of nodes, they will always 
+be kept in order for you.  
+
+    a.	Print out the frequency table and the Huffman Code for 
+        each letter of the Gettysburg address.
+    b.	Encode the Gettysburg address. 
+    c.	Print the encoded Gettysburg address.
+    d.	Decode your compressed file and print out the Gettysburg 
+        address.
+    e.	Print out the compression ratio that was achieved.
+
+
+Due May 13th
