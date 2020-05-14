@@ -115,10 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Except.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="BinaryTreeNode.h" />
+    <ClInclude Include="DoubleLinked.h" />
+    <ClInclude Include="DLNode.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="PrintHeader.h" />
   </ItemGroup>
@@ -128,6 +129,7 @@
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="IOStream.txt" />
+    <Text Include="output.txt" />
     <Text Include="Prompt.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,142 @@
+****************************************************************************
+* PROGRAMMED BY : Nick Reardon
+* CLASS         : CS1D
+* SECTION       : MW - 2:30p
+* Assignment #15: Huffman Coding
+****************************************************************************
+
+                Assignment #15 - Huffman Coding
+
+    Generate a Huffman Code for the letters in some alphabet, one
+must start with a set of letters from the alphabet along with
+their frequencies.
+
+Method:
+    First, build a list which holds references to (binary) nodes
+containing the letters in the alphabet, their frequencies of
+occurrences, and left and right subtree references (initially null).
+This could be viewed as a forest of single node trees. There will
+be exactly one node in the list for each letter.
+
+    Second, systematically transform the list into a list with only one
+element in it where the element points to the root of the
+Huffman Code Tree for that alphabet (a single binary tree). This
+transformation takes place as follows: repeatedly take two
+elements in the list which have the lowest frequencies and make
+them the left and right subtrees of the new element in the list
+(lowest frequency goes in the left - for ease of grading). The
+frequency of the new element is the sum of the frequencies of the two
+that it embodies. This new element will replace the two
+elements just used in the list.
+
+If you use a priority queue for your list of nodes, they will always
+be kept in order for you.
+
+    a.  Print out the frequency table and the Huffman Code for
+        each letter of the Gettysburg address.
+    b.  Encode the Gettysburg address.
+    c.  Print the encoded Gettysburg address.
+    d.  Decode your compressed file and print out the Gettysburg
+        address.
+    e.  Print out the compression ratio that was achieved.
+
+
+Due May 13th
+****************************************************************************
+
+
+Reading text from file...
+
+Inserting into frequency tree...
+
+Outputting huffman code...
+  Letter | Frequency  | Code
+--------------------------------------------------
+    F    |     1      | 11110011010
+    o    |     98     | 1010
+    u    |     21     | 1111011
+    r    |     83     | 0100
+  space |     286    | 00
+    s    |     46     | 10010
+    c    |     31     | 110101
+    e    |     173    | 011
+    a    |     104    | 1011
+    n    |     77     | 11111
+    d    |     58     | 11001
+    v    |     24     | 100110
+    y    |     10     | 1000000
+    g    |     27     | 110001
+    f    |     28     | 110100
+    t    |     128    | 1110
+    h    |     85     | 0101
+    b    |     13     | 1100000
+    i    |     66     | 11011
+    ,    |     24     | 100001
+    w    |     26     | 100111
+    L    |     1      | 11110011000
+    p    |     20     | 1111010
+    l    |     45     | 10001
+    m    |     14     | 1100001
+    q    |     1      | 11110011100
+    .    |     11     | 1000001
+    N    |     1      | 11110011101
+    W    |     2      | 1111001010
+    -    |     15     | 1111000
+    I    |     3      | 1111001111
+    B    |     1      | 11110011011
+    T    |     2      | 1111001011
+    k    |     3      | 111100100
+    G    |     1      | 11110011001
+
+  Compressed (KB) | Uncompressed (KB)  | Ratio
+--------------------------------------------------
+     6.24414      |     10.4521        | 1.67391
+
+
+
+Printing tree...
+Huffman Tree
+Level 0: (1529)
+Level 1: (627) (902)
+Level 2: (space 286) (341) (388) (514)
+Level 3: (168) (e 173) (186) (202) (237) (277)
+Level 4: (r 83) (h 85) (90) (96) (o 98) (a 104) (112) (125) (t 128) (149)
+Level 5: (45) (l 45) (s 46) (50) (54) (d 58) (59) (i 66) (72) (n 77)
+Level 6: (21) (, 24) (v 24) (w 26) (27) (g 27) (f 28) (c 31) (31) (41)
+Level 7: (y 10) (. 11) (b 13) (m 14) (- 15) (16) (p 20) (u 21)
+Level 8: (7) (9)
+Level 9: (k 3) (4) (4) (5)
+Level 10: (W 2) (T 2) (2) (2) (2) (I 3)
+Level 11: (L 1) (G 1) (F 1) (B 1) (q 1) (N 1)
+
+
+Compressing file...
+
+
+Decompressing file...
+Decompressed File
+Four score and seven years ago our fathers brought forth on this
+continent, a new nation, conceived in Liberty, and dedicated to the
+proposition that all men are created equal. Now we are engaged in a
+great civil war, testing whether that nation, or any nation so
+conceived and so dedicated, can long endure. We are met on a great
+battle-field of that war. We have come to dedicate a portion of that
+field, as a final resting place for those who here gave their lives
+that that nation might live. It is altogether fitting and proper that
+we should do this. But, in a larger sense, we can not dedicate -- we
+can not consecrate -- we can not hallow -- this ground. The brave men,
+living and dead, who struggled here, have consecrated it, far above
+our poor power to add or detract. The world will little note, nor long
+remember what we say here, but it can never forget what they did here.
+It is for us the living, rather, to be dedicated here to the
+unfinished work which they who fought here have thus far so nobly
+advanced. It is rather for us to be here dedicated to the great task
+remaining before us -- that from these honored dead we take increased
+devotion to that cause for which they gave the last full measure of
+devotion -- that we here highly resolve that these dead shall not have
+died in vain -- that this nation, under God, shall have a new birth of
+freedom -- and that government of the people, by the people, for the
+people, shall not perish from the earth.people, for the people, shall
+not perish from the earth.he earth.
+
+Press any key to continue . . .
